@@ -13,11 +13,12 @@
       body > p:nth-of-type(1) {
         color: red;
       }
-      p.a[tabindex="-1"]:focus {
-        color: blue;
-      }
+
       p.a[tabindex="-1"]:hover {
         color: red;
+      }
+      p.a[tabindex="-1"]:focus {
+        color: blue;
       }
       p.a[tabindex="-1"]:active {
         color: green;
@@ -48,7 +49,6 @@
       }
     </style>
   </head>
-
   <body>
     <p>红色</p>
 
@@ -84,17 +84,38 @@
     </div>
 
     <style>
-      .a ul li:nth-child(n + 4):nth-last-child(n + 9) {
-        color: red;
-      }
-      .b ul li:nth-child(-n + 25) {
-        color: red;
-      }
-      .b ul li:nth-child(n + 65) {
-        color: green;
-      }
-      .b ul li:nth-child(n + 35):nth-child(-n + 50) {
-        color: blue;
+    <style>
+        .a ul li:nth-child(n + 4):nth-child(-n + 7) {
+            color: red;
+        }
+        .b ul li:nth-child(n):nth-child(-n+25) {
+            color: red;
+        }
+        .b ul li:nth-child(n):nth-child(n+65) {
+            color: green;
+        }
+        .b ul li:nth-child(n+35):nth-child(-n+50) {
+            color: blue;
+        }
+        .prime ul li:nth-child(n+2) {
+            color: skyblue;
+        }
+        .prime ul li:nth-child(3n) {
+            color:red;
+        }
+        .prime ul li:nth-child(2n+4){
+            color:green;
+        }
+        .prime ul li:nth-child(3n){
+            color:green;
+        }
+        .prime ul li:nth-child(5n){
+            color:green;
+        }
+        .prime ul li:nth-child(7n){
+            color:green;
+        }
+    </style>
       }
     </style>
     <div class="a">
@@ -338,23 +359,5 @@
         <li>100</li>
       </ul>
     </div>
-    <script>
-      let li = document.querySelector(".prime").childNodes[3].children;
-      let len = li.length;
-      function makeNums(len) {
-        let set = new Set();
-        for (let i = 2; i < len / 2; i++) {
-          for (let j = 2; j < len / 2; j++) {
-            if (i * j !== 2 && i * j <= len) {
-              set.add(i * j);
-            }
-          }
-        }
-        return set;
-      }
-      let arr = [...makeNums(100)].sort((a, b) => a - b); console.log(arr);
-      for(var i = 0;i <arr.length;i++){
-        li[arr[i]-1].style.color = "red";
-      }
-    </script>
+
   </body>
