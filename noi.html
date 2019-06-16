@@ -18,12 +18,10 @@
         var a = +prompt('请输入 a 的值：');
         var b = +prompt('请输入 b 的值：');
         var c = +prompt('请输入 c 的值：');
-        if(c==0){
-            console.log("c不能为0")
-        }else{
+        
             var x = (a + b) / c;
             console.log(x);
-        }
+        
    </script>
 
    <script id="ch0103/04" xtype="x">
@@ -44,76 +42,55 @@
     console.log(x.toFixed(9));
  </script>
 
- <script id="ch0103/06" xtype="x">
-    var a = +prompt('请输入 a 的值：');
-    var b = +prompt('请输入 b 的值：');
-
-    var x = a / b;
-    console.log(x.toFixed(9));
- </script>
-
- <script id="ch0103/07" xtype="v">
-    var a = +prompt('请输入 a 的值：');
-    var b = +prompt('请输入 b 的值：');
-    var c = +prompt('请输入 c 的值：');
-    var d = +prompt('请输入 d 的值：');
-    var x = +prompt('请输入 x 的值：');
-    var y = a * x * x * x + b * x * x  + c * x + d ;
-
-    console.log(y)
- </script>
-
-    <script id="ch0103/08" xtype="v">
-        var a = +prompt('请输入华氏温度的值：');
-        
-        var x = 5 * (a - 32) / 9;
-        console.log(x)
-        </script>
-
-<script id="ch0103/09" xtype="v">
-    var a = +prompt('请输入圆的半径：');
-    var b = 2 * a;
-    var c = b * 3.14;
-    var d = 3.14 * a *a ;
-    
-    console.log(b);
-    console.log(c);
-    console.log(d);
- </script>
-
-<script id="ch0103/10" xtype="v">
-    var a = +prompt('请输入电阻 a 的值：');
-    var b = +prompt('请输入电阻 b 的值：');
-    var y = 1 / (1 / a + 1 / b) ;
-
-    console.log(y)
- </script>
-
- <script id="ch0103/11" xtype="v">
-    var a = +prompt('请输入 a 的值：');
-    var b = +prompt('请输入 b 的值：');
-    var y = a % b ;
-
-    console.log(y)
- </script>
-
- <script id="ch0103/12" xtype="v">
-    var a = +prompt('请输入球的半径：');
-    var y = 4 / 3 *3.14 * a * a * a ;
-
-    console.log(y)
- </script>
-
-<script id="ch0103/13" xtype="v">
-    var a = +prompt('请输入一个三位数');
-    var g = a % 10 ;
-    var b = Math.floor(a / 100);
-    var t = a % 100;
-    var s = Math.floor(t / 10);
-    var x = g * 100 + s * 10 + b;
-    
-     console.log(x)
- </script>
+<script id="ch0103/06">
+    var a = Number(prompt())
+    var b = Number(prompt())
+    var c = (b / a * 100).toFixed(3) + "%"
+    console.log(c)
+  </script>
+  <script id="ch0103/07">
+      var x = Number(prompt())
+      var a = Number(prompt())
+      var b = Number(prompt())
+      var c = Number(prompt())
+      var d = Number(prompt())
+      var e = a * x * x * x + b * x * x + c * x + d
+      console.log(e.toFixed(7))
+  </script>
+  <script id="ch0103/08">
+    var f = Number(prompt())
+    var c = 5 * (f - 32) / 9
+    console.log(c.toFixed(5))
+  </script>
+  <script id="ch0103/09">
+    var r = Number(prompt())
+    console.log((2 * r).toFixed(4), (2 * 3.14159 * r).toFixed(4), (3.14159 * r * r).toFixed(4))
+  </script>
+  <script id="ch0103/10">
+    var a = Number(prompt())
+    var b = Number(prompt())
+    var c = a * b / (a + b)
+    console.log(c.toFixed(2))
+  </script>
+  <script id="ch0103/11">
+    var a = Number(prompt())
+    var b = Number(prompt())
+    var c = a % b 
+    console.log(c.toFixed(4))
+  </script>
+  <script id="ch0103/12">
+    var a = Number(prompt())
+    var b = 4 / 3 * 3.14 * a * a * a
+    console.log(b.toFixed(2))
+  </script>
+  <script id="ch0103/13">
+    var a = Number(prompt())
+    var b = a % 10
+    var c = a % 100 -b
+    var d = a - a % 100
+    var f = b * 100 + "" + c * 10 + "" + d / 100
+    console.log(f)
+  </script>
 
  <script id="ch0103/14" xtype="v">
     var a = +prompt('请输入圆桶的高：');
@@ -417,7 +394,20 @@ console.log(x=x.toFixed(2))
    
  </script>
 
- <script id="ch0104/15" xtype="v">
+<script id="ch0104/16" xtype="v">
+    var a = +prompt('请输入a边：');
+    var b = +prompt('请输入b边：');
+    var c = +prompt('请输入c边：');
+    if(a > Math.sqrt((b - c) * (b - c)) && a < b + c && b > Math.sqrt((a - c) * (a - c)) && c > Math.sqrt((b - a) * (b - a)) && c < b + a ){
+        console.log('yes')
+    }else{
+      
+        console.log('no')
+      }
+  
+ </script>
+
+<script id="ch0104/17" xtype="v">
     var a = +prompt('请输入年份a：');
     var x = a % 4;
     var y = a % 100;
@@ -433,19 +423,6 @@ console.log(x=x.toFixed(2))
       }
     }
    
- </script>
-
-<script id="ch0104/16" xtype="v">
-    var a = +prompt('请输入a边：');
-    var b = +prompt('请输入b边：');
-    var c = +prompt('请输入c边：');
-    if(a > Math.sqrt((b - c) * (b - c)) && a < b + c && b > Math.sqrt((a - c) * (a - c)) && c > Math.sqrt((b - a) * (b - a)) && c < b + a ){
-        console.log('yes')
-    }else{
-      
-        console.log('no')
-      }
-  
  </script>
 
  <script id="ch0104/18" xtype="v">
@@ -488,35 +465,24 @@ console.log(x=x.toFixed(2))
     }
   </script>
 
-<script id="ch0104/20" xtype="v">
-var a = +prompt('请输入 a 的值：')
-var b = +prompt('请输入 b 的值：')
-var c = +prompt('请输入 c 的值：')
-
-var delta = b * b - 4 * a * c
-
-if (delta == 0) {
-
-  var x = -b / 2 / a
-  console.log(x)
-
-} else {
-  if (delta > 0) {
-    var s_delta = Math.sqrt(delta)
-
-    var x1 = (-b + s_delta) / 2 / a
-    var x2 = (-b - s_delta) / 2 / a
-
-    console.log(x1, x2)
-  } else {//delta < 0
-    var s_delta = Math.sqrt(-delta)
-
-    var x1 = (-b) / (2 * a) + '+' +  s_delta / (2 * a) + 'i'
-    var x2 = (-b) / (2 * a) + '-' +  s_delta / (2 * a) + 'i'
-
-    console.log(x1, x2)
+</script>
+<script type="" id="ch0104/20">
+  var a =Number(prompt())
+  var b =Number(prompt())
+  var c =Number(prompt())
+  var d = b * b - 4 * a * c
+  if (d == 0) {
+    var x = -b / (2 * a)
+    console.log('x1' + '=' + 'x2' + '=' + x.toFixed(5))
+  } else if (d > 0) {
+      var x1 = (-b + Math.sqrt(d)) / (2 * a)
+      var x2 = (-b - Math.sqrt(d)) / (2 * a)
+      console.log('x1' + '=' + x1.toFixed(5) + ';' + 'x2' + '=' + x2.toFixed(5))
+  }else {
+    var x1 = (-b / (2 * a)).toFixed(5)+ '+' + (Math.sqrt(-d) / (2 * a)).toFixed(5) + 'i'
+    var x2 = (-b / (2 * a)).toFixed(5)+ '-' + (Math.sqrt(-d) / (2 * a)).toFixed(5) + 'i'
+    console.log('x1' + '=' +  x1 + ';' + 'x2' + '=' + x2)
   }
-}
 </script>
 
 <script id="ch0104/21" xtype="v">
