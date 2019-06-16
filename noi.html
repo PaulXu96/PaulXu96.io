@@ -15,12 +15,11 @@
     </script>
 
     <script id="ch0103/03" xtype="x">
-        var a = +prompt('请输入 a 的值：');
-        var b = +prompt('请输入 b 的值：');
-        var c = +prompt('请输入 c 的值：');
-        
-            var x = (a + b) / c;
-            console.log(x);
+         var a = Number(prompt())
+  var b = Number(prompt())
+  var c = Number(prompt())
+  var d = (a + b) / c
+  console.log(d | 0)
         
    </script>
 
@@ -185,14 +184,12 @@ console.log(x=x.toFixed(2))
  </script>
 
 <script id="ch0104/03" xtype="v">
-    var a = +prompt('请输入a：');
-    var x = a % 2 ;
-    if(x == 1){
-        console.log('add')
-    }else{
-        if(x == 0)
-        console.log('even')
-    }
+    var N = Number(prompt())
+  if(N % 2 == 0){
+    console.log('even')
+  }else{
+    console.log('odd')
+  }
    
  </script>
 
